@@ -43,11 +43,11 @@
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtMatricula = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabPageConsulta = new TabPage();
-            imageList1 = new ImageList(components);
-            listViewConsulta = new ReaLTaiizor.Controls.MaterialListView();
-            btnNovo = new ReaLTaiizor.Controls.MaterialButton();
-            btnEditar = new ReaLTaiizor.Controls.MaterialButton();
             btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
+            btnEditar = new ReaLTaiizor.Controls.MaterialButton();
+            btnNovo = new ReaLTaiizor.Controls.MaterialButton();
+            listViewConsulta = new ReaLTaiizor.Controls.MaterialListView();
+            imageList1 = new ImageList(components);
             tabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
@@ -128,6 +128,7 @@
             btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnCancelar.UseAccentColor = false;
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtSenha
             // 
@@ -397,52 +398,25 @@
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
             // 
-            // imageList1
+            // btnExcluir
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "form.png");
-            imageList1.Images.SetKeyName(1, "search.png");
-            // 
-            // listViewConsulta
-            // 
-            listViewConsulta.AutoSizeTable = false;
-            listViewConsulta.BackColor = Color.FromArgb(255, 255, 255);
-            listViewConsulta.BorderStyle = BorderStyle.FixedSingle;
-            listViewConsulta.Depth = 0;
-            listViewConsulta.Dock = DockStyle.Top;
-            listViewConsulta.FullRowSelect = true;
-            listViewConsulta.Location = new Point(3, 3);
-            listViewConsulta.MinimumSize = new Size(200, 100);
-            listViewConsulta.MouseLocation = new Point(-1, -1);
-            listViewConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            listViewConsulta.Name = "listViewConsulta";
-            listViewConsulta.OwnerDraw = true;
-            listViewConsulta.Size = new Size(634, 324);
-            listViewConsulta.TabIndex = 0;
-            listViewConsulta.UseCompatibleStateImageBehavior = false;
-            listViewConsulta.View = View.Details;
-            // 
-            // btnNovo
-            // 
-            btnNovo.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnNovo.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnNovo.Depth = 0;
-            btnNovo.HighEmphasis = true;
-            btnNovo.Icon = null;
-            btnNovo.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnNovo.Location = new Point(402, 336);
-            btnNovo.Margin = new Padding(4, 6, 4, 6);
-            btnNovo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnNovo.Name = "btnNovo";
-            btnNovo.NoAccentTextColor = Color.Empty;
-            btnNovo.Size = new Size(64, 36);
-            btnNovo.TabIndex = 1;
-            btnNovo.Text = "NOVO";
-            btnNovo.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnNovo.UseAccentColor = false;
-            btnNovo.UseVisualStyleBackColor = true;
+            btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnExcluir.Depth = 0;
+            btnExcluir.HighEmphasis = true;
+            btnExcluir.Icon = null;
+            btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnExcluir.Location = new Point(553, 336);
+            btnExcluir.Margin = new Padding(4, 6, 4, 6);
+            btnExcluir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.NoAccentTextColor = Color.Empty;
+            btnExcluir.Size = new Size(80, 36);
+            btnExcluir.TabIndex = 3;
+            btnExcluir.Text = "EXCLUIR";
+            btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnExcluir.UseAccentColor = false;
+            btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
@@ -464,25 +438,53 @@
             btnEditar.UseAccentColor = false;
             btnEditar.UseVisualStyleBackColor = true;
             // 
-            // btnExcluir
+            // btnNovo
             // 
-            btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnExcluir.Depth = 0;
-            btnExcluir.HighEmphasis = true;
-            btnExcluir.Icon = null;
-            btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnExcluir.Location = new Point(553, 336);
-            btnExcluir.Margin = new Padding(4, 6, 4, 6);
-            btnExcluir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.NoAccentTextColor = Color.Empty;
-            btnExcluir.Size = new Size(80, 36);
-            btnExcluir.TabIndex = 3;
-            btnExcluir.Text = "EXCLUIR";
-            btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnExcluir.UseAccentColor = false;
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnNovo.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnNovo.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnNovo.Depth = 0;
+            btnNovo.HighEmphasis = true;
+            btnNovo.Icon = null;
+            btnNovo.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnNovo.Location = new Point(402, 336);
+            btnNovo.Margin = new Padding(4, 6, 4, 6);
+            btnNovo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnNovo.Name = "btnNovo";
+            btnNovo.NoAccentTextColor = Color.Empty;
+            btnNovo.Size = new Size(64, 36);
+            btnNovo.TabIndex = 1;
+            btnNovo.Text = "NOVO";
+            btnNovo.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnNovo.UseAccentColor = false;
+            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += btnNovo_Click;
+            // 
+            // listViewConsulta
+            // 
+            listViewConsulta.AutoSizeTable = false;
+            listViewConsulta.BackColor = Color.FromArgb(255, 255, 255);
+            listViewConsulta.BorderStyle = BorderStyle.None;
+            listViewConsulta.Depth = 0;
+            listViewConsulta.Dock = DockStyle.Top;
+            listViewConsulta.FullRowSelect = true;
+            listViewConsulta.Location = new Point(3, 3);
+            listViewConsulta.MinimumSize = new Size(200, 100);
+            listViewConsulta.MouseLocation = new Point(-1, -1);
+            listViewConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            listViewConsulta.Name = "listViewConsulta";
+            listViewConsulta.OwnerDraw = true;
+            listViewConsulta.Size = new Size(634, 324);
+            listViewConsulta.TabIndex = 0;
+            listViewConsulta.UseCompatibleStateImageBehavior = false;
+            listViewConsulta.View = View.Details;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "form.png");
+            imageList1.Images.SetKeyName(1, "search.png");
             // 
             // FormAluno
             // 
