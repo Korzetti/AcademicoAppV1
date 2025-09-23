@@ -128,7 +128,7 @@ namespace AcademicoAppV1
                 var campos = line.Split(";");
                 listViewConsulta.Items.Add(new ListViewItem(campos));
             }
-            listViewConsulta.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listViewConsulta.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             Cursor.Current = Cursors.Default;
         }
 
