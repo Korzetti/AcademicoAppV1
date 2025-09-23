@@ -43,10 +43,10 @@
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtMatricula = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabPageConsulta = new TabPage();
+            listViewConsulta = new ListView();
             btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
             btnEditar = new ReaLTaiizor.Controls.MaterialButton();
             btnNovo = new ReaLTaiizor.Controls.MaterialButton();
-            listViewConsulta = new ReaLTaiizor.Controls.MaterialListView();
             imageList1 = new ImageList(components);
             tabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -108,6 +108,7 @@
             btnSalvar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnSalvar.UseAccentColor = false;
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -385,10 +386,10 @@
             // 
             // tabPageConsulta
             // 
+            tabPageConsulta.Controls.Add(listViewConsulta);
             tabPageConsulta.Controls.Add(btnExcluir);
             tabPageConsulta.Controls.Add(btnEditar);
             tabPageConsulta.Controls.Add(btnNovo);
-            tabPageConsulta.Controls.Add(listViewConsulta);
             tabPageConsulta.ImageKey = "search.png";
             tabPageConsulta.Location = new Point(4, 31);
             tabPageConsulta.Name = "tabPageConsulta";
@@ -397,9 +398,23 @@
             tabPageConsulta.TabIndex = 1;
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
+            tabPageConsulta.Enter += tabPageConsulta_Enter;
+            // 
+            // listViewConsulta
+            // 
+            listViewConsulta.Dock = DockStyle.Top;
+            listViewConsulta.FullRowSelect = true;
+            listViewConsulta.Location = new Point(3, 3);
+            listViewConsulta.Name = "listViewConsulta";
+            listViewConsulta.Size = new Size(634, 324);
+            listViewConsulta.TabIndex = 4;
+            listViewConsulta.UseCompatibleStateImageBehavior = false;
+            listViewConsulta.View = View.Details;
+            listViewConsulta.MouseDoubleClick += listViewConsulta_MouseDoubleClick;
             // 
             // btnExcluir
             // 
+            btnExcluir.Anchor = AnchorStyles.Right;
             btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnExcluir.Depth = 0;
@@ -417,9 +432,11 @@
             btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnExcluir.UseAccentColor = false;
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
+            btnEditar.Anchor = AnchorStyles.Right;
             btnEditar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnEditar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnEditar.Depth = 0;
@@ -437,9 +454,11 @@
             btnEditar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnEditar.UseAccentColor = false;
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnNovo
             // 
+            btnNovo.Anchor = AnchorStyles.Right;
             btnNovo.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnNovo.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnNovo.Depth = 0;
@@ -458,25 +477,6 @@
             btnNovo.UseAccentColor = false;
             btnNovo.UseVisualStyleBackColor = true;
             btnNovo.Click += btnNovo_Click;
-            // 
-            // listViewConsulta
-            // 
-            listViewConsulta.AutoSizeTable = false;
-            listViewConsulta.BackColor = Color.FromArgb(255, 255, 255);
-            listViewConsulta.BorderStyle = BorderStyle.None;
-            listViewConsulta.Depth = 0;
-            listViewConsulta.Dock = DockStyle.Top;
-            listViewConsulta.FullRowSelect = true;
-            listViewConsulta.Location = new Point(3, 3);
-            listViewConsulta.MinimumSize = new Size(200, 100);
-            listViewConsulta.MouseLocation = new Point(-1, -1);
-            listViewConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            listViewConsulta.Name = "listViewConsulta";
-            listViewConsulta.OwnerDraw = true;
-            listViewConsulta.Size = new Size(634, 324);
-            listViewConsulta.TabIndex = 0;
-            listViewConsulta.UseCompatibleStateImageBehavior = false;
-            listViewConsulta.View = View.Details;
             // 
             // imageList1
             // 
@@ -524,6 +524,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnExcluir;
         private ReaLTaiizor.Controls.MaterialButton btnEditar;
         private ReaLTaiizor.Controls.MaterialButton btnNovo;
-        private ReaLTaiizor.Controls.MaterialListView listViewConsulta;
+        private ListView listViewConsulta;
     }
 }
